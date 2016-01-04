@@ -3,10 +3,13 @@ angular.module('eventer.services',[])
 	var getEvents = function(zip){
 		return $http({
 			method: 'GET',
-			url: 'http://api.seatgeek.com/events?postal_code=' + zip
+			url: 'http://api.seatgeek.com/events?taxonomies.name=sports&postal_code=' + zip
+		}).then(function(data){
+			console.log('data', data);
+			return data.data;
 		});
 	};
 	return {
 		getEvents: getEvents
-	}
+	};
 })

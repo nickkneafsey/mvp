@@ -1,0 +1,11 @@
+<div class='events' ng-controller="EventsController">
+	
+
+	<form>
+    <input ng-model='zip'>
+    <button ng-submit='populateEvents()'>Submit</button>
+	</form>
+	<div ng-repeat='event in data.events'>
+		<p>{{event}}</p>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='eventer'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Event Aggregator</title>
+   <!--  <link rel="stylesheet" type="text/css" href="styles/style.css" /> -->
+  </head>
+  <body>
+    <h1>Event Aggregator</h1>
+    <!-- to be commented out later -->
+    <div class='events' ng-controller="EventsController">
+  
+
+      <form ng-submit='populateEvents()'>
+        <input ng-model='zip'>
+        <button type="submit">Submit</button>
+      </form>
+      <p>{{zip}}</p>
+      <div ng-repeat='event in data.events'>
+        <p>{{event.title}}</p>
+      </div>
+    </div>
+    <!-- end to be commented out later -->
+    <!-- <div ng-view></div> -->
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-route/angular-route.js"></script>
+
+    <script src="events/eventsController.js"></script>
+    <script src="services/services.js"></script>
+    <script src="app.js"></script>
+  </body>
