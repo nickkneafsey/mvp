@@ -13,6 +13,9 @@ var userSchema = new mongoose.Schema({
 	},
 	favorites:{
 		type: Array
+	},
+	locations: {
+		type: Array
 	}
 });
 

@@ -15,13 +15,19 @@
         <input ng-model='zip' placeholder="Enter Zip Code">
         <center><button type="submit">Submit</button></center>
       </form>
+
       <form class="addFavorite" ng-submit='addToFavorites()'>
         <input ng-model='favorite' placeholder="Add Favorite">
         <center><button type="submit">Submit</button></center>
       </form>
+
       <form class="filter">
         <input ng-model='filter' placeholder="Filter">
       </form>
+      <select ng-init='getFavs()'>
+        <!-- <option value="volvo">Volvo</option> -->
+        <option ng-repeat='favorite in favorites' ng-model='favorite'>{{favorite}}</option>
+      </select>
 
       <!-- create a dropdown with favorites -->
       <div class="event" ng-repeat='event in data.events| filter: filter' style="background-image: url({{event.performers[0].image}})">

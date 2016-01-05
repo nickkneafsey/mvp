@@ -10,4 +10,7 @@ angular.module('eventer',['eventer.services', 'eventer.events', 'ngRoute'])
 	.otherwise({
 		redirectTo: '/events'
 	});
-})
+}).constant('_', window._)
+  .run(function ($rootScope) {
+     $rootScope._ = window._;
+  });
