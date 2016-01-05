@@ -2,7 +2,7 @@
 angular.module('eventer.events', [])
 
 .controller('EventsController', function ($scope, Events){
-	$scope.zip = '90001';
+	$scope.zip = '';
 	$scope.data = {};
 	$scope.favorite = '';
 	$scope.favorites = [];
@@ -36,7 +36,7 @@ angular.module('eventer.events', [])
 
 	$scope.getZips = function() {
     Events.getLocations($scope.username).then(function(data){
-    	$scope.zips = data.data;
+    	$scope.zips = data.data.sort();
     }).catch(function(error){
 	  	console.error(error);
 	  });
