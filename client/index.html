@@ -19,15 +19,12 @@
         <input ng-model='filter' placeholder="Filter">
       </form>
       <!-- <p>{{zip}}</p> -->
-      <div class="event" ng-repeat='event in data.events| filter: filter'>
-        <!-- <div background='url('+{{event.performers[0].image}}+')'> -->
-        <div style="background-image: url({{event.performers[0].image}})"> 
+      <div class="event" ng-repeat='event in data.events| filter: filter' style="background-image: url({{event.performers[0].image}})">
           <span class="title">{{event.title}}</span><br>
           <span class="date">{{event.datetime_local}}</span><br>
           <span class="city">{{event.venue.city}}</span><br>
           <span class="venue">{{event.venue.name}}</span><br>
           <span class="price">{{event.stats.lowest_price}}</span><br>
-        </div>
       </div>
     </div>
     <!-- end to be commented out later -->
