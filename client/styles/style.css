@@ -1,0 +1,40 @@
+.event {
+  border-width: 3px;
+  border-color: black;
+  border-style: solid;
+  color:white;
+  background-color: black;
+  font-size: 15pt;
+  font-family: 'Helvetica', serif;
+  height:200px;
+
+}
+/*p{
+	background-color: black;
+	display
+}*/
+button{
+	width: 95%;
+	height: 25px;
+	position:relative;
+	text-align: center;
+}
+.title, .date, .city, .venue, .price{
+	background-color: black;
+	display:inline;
+}
+
+input {
+  width: 100%;
+  text-align: center;
+  line-height: 55px;
+  font-family: 'Helvetica', serif;
+  font-size: 32pt;
+}
+
+h1 {
+  font-size: 36pt;
+  font-family: 'Helvetica', serif;
+  text-align: center;
+  padding-bottom: 36px;
+}

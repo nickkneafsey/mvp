@@ -5,7 +5,6 @@ angular.module('eventer.services',[])
 			method: 'GET',
 			url: 'http://api.seatgeek.com/events?taxonomies.name=sports&postal_code=' + zip
 		}).then(function(data){
-			console.log('data', data);
 			return data.data;
 		});
 	};
