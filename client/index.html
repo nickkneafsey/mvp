@@ -10,28 +10,30 @@
     <!-- to be commented out later -->
     <div class='events' ng-controller="EventsController">
   
+      <select ng-init='getZips()' ng-change='populateEvents()' ng-model='zip'>
+        <option>Previously used Zip Codes</option>
+        <option ng-repeat='zip in zips'  value={{zip}}>{{zip}}</option>
+      </select>
 
       <form class="populate" ng-submit='populateEvents(); addZip()'>
         <input ng-model='zip' placeholder="Enter Zip Code">
         <center><button type="submit">Submit</button></center>
       </form>
-      <select ng-init='getZips()'>
-        <option>Previously used Zip Codes</option>
-        <option ng-repeat='zip in zips' ng-model='zip' value={{zip}}>{{zip}}</option>
-      </select>
+      
 
       <form class="addFavorite" ng-submit='addToFavorites()'>
         <input ng-model='favorite' placeholder="Add Favorite">
         <center><button type="submit">Submit</button></center>
       </form>
 
+      <select ng-init='getFavs()' ng-model='filter'>
+        <option>Filter By Favorite</option>
+        <option ng-repeat='favorite in favorites'  value={{favorite}}>{{favorite}}</option>
+      </select>
+
       <form class="filter">
         <input ng-model='filter' placeholder="Filter">
       </form>
-      <select ng-init='getFavs()'>
-        <option>Filter By Favorite</option>
-        <option ng-repeat='favorite in favorites' ng-model='filter' value={{favorite}}>{{favorite}}</option>
-      </select>
 
       <!-- create a dropdown with favorites -->
       <div class="event" ng-repeat='event in data.events| filter: filter' style="background-image: url({{event.performers[0].image}})">

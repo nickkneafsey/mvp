@@ -36,7 +36,7 @@ angular.module('eventer.events', [])
 
 	$scope.getZips = function() {
     Events.getLocations($scope.username).then(function(data){
-    	$scope.zips = data;
+    	$scope.zips = data.data;
     }).catch(function(error){
 	  	console.error(error);
 	  });
