@@ -8,7 +8,15 @@ angular.module('eventer.services',[])
 			return data.data;
 		});
 	};
+	var addFavorite = function(favorite){
+		return $http({
+			method: 'POST',
+			url: '/api/users/favorites',
+			data: favorite
+		});
+	}
 	return {
-		getEvents: getEvents
+		getEvents: getEvents,
+		addFavorite: addFavorite
 	};
 })

@@ -15,10 +15,15 @@
         <input ng-model='zip' placeholder="Enter Zip Code">
         <center><button type="submit">Submit</button></center>
       </form>
+      <form class="addFavorite" ng-submit='addToFavorites()'>
+        <input ng-model='favorite' placeholder="Add Favorite">
+        <center><button type="submit">Submit</button></center>
+      </form>
       <form class="filter">
         <input ng-model='filter' placeholder="Filter">
       </form>
-      <!-- <p>{{zip}}</p> -->
+
+      <!-- create a dropdown with favorites -->
       <div class="event" ng-repeat='event in data.events| filter: filter' style="background-image: url({{event.performers[0].image}})">
           <span class="title">{{event.title}}</span><br>
           <span class="date">{{event.datetime_local}}</span><br>
@@ -30,8 +35,8 @@
     <!-- end to be commented out later -->
     <!-- <div ng-view></div> -->
 
-    <script src="../node_modules/angular/angular.js"></script>
-    <script src="../node_modules/angular-route/angular-route.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
 
     <script src="events/eventsController.js"></script>
     <script src="services/services.js"></script>
