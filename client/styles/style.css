@@ -9,11 +9,8 @@
   height:200px;
 
 }
-/*p{
-	background-color: black;
-	display
-}*/
-button{
+
+button {
 	width: 95%;
 	height: 25px;
 	position:relative;
@@ -30,6 +27,7 @@ input {
   line-height: 55px;
   font-family: 'Helvetica', serif;
   font-size: 32pt;
+  border-radius: 3px;
 }
 
 h1 {
@@ -37,4 +35,12 @@ h1 {
   font-family: 'Helvetica', serif;
   text-align: center;
   padding-bottom: 36px;
+}
+
+select {
+  width: 95%;
+  height: 34px;
+  overflow: hidden;
+  background: url(new_arrow.png) no-repeat right #ddd;
+  border: 1px solid #ccc;
 }

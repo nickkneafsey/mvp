@@ -9,36 +9,40 @@
     <h1>Local Sporting Event Aggregator</h1>
     <!-- to be commented out later -->
     <div class='events' ng-controller="EventsController">
-  
+      <center>
       <select ng-init='getZips()' ng-change='populateEvents()' ng-model='zip'>
-        <option>Previously used Zip Codes</option>
+        <option value="" disabled selected>Previously used Zip Codes</option>
         <option ng-repeat='zip in zips'  value={{zip}}>{{zip}}</option>
       </select>
-
+      </center>
       <form class="populate" ng-submit='populateEvents(); addZip(); getZips()'>
         <input ng-model='zip' placeholder="Enter Zip Code">
         <center><button type="submit">Submit</button></center>
       </form>
-      
+      <br>
 
       <form class="addFavorite" ng-submit='addToFavorites(); getFavs()'>
         <input ng-model='favorite' placeholder="Add Favorite">
         <center><button type="submit">Submit</button></center>
       </form>
 
+      <br>
+      <center>
       <select ng-init='getFavs()' ng-model='filter'>
-        <option>Filter By Favorite</option>
+        <option value="" disabled selected>Filter By Favorite</option>
         <option ng-repeat='favorite in favorites'  value={{favorite}}>{{favorite}}</option>
       </select>
-
+      </center>
+      
       <form class="filter">
         <input ng-model='filter' placeholder="Filter">
       </form>
+      <br>
 
       <!-- create a dropdown with favorites -->
       <div class="event" ng-repeat='event in data.events| filter: filter' style="background-image: url({{event.performers[0].image}})">
           <span class="title">{{event.title}}</span><br>
-          <span class="date">{{event.datetime_local}}</span><br>
+          <span class="date">{{event.datetime_local | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a'}}</span><br>
           <span class="city">{{event.venue.city}}</span><br>
           <span class="venue">{{event.venue.name}}</span><br>
           <span class="price">{{event.stats.lowest_price}}</span><br>
@@ -47,8 +51,12 @@
     <!-- end to be commented out later -->
     <!-- <div ng-view></div> -->
 
+
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular-route/angular-route.js"></script>
+
+    <script src="moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
 
     <script src="events/eventsController.js"></script>
     <script src="services/services.js"></script>

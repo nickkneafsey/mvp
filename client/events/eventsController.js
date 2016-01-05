@@ -1,8 +1,8 @@
 
-angular.module('eventer.events', [])
+angular.module('eventer.events', ['angularMoment'])
 
 .controller('EventsController', function ($scope, Events){
-	$scope.zip = '';
+	$scope.zip;
 	$scope.data = {};
 	$scope.favorite = '';
 	$scope.favorites = [];
@@ -23,8 +23,7 @@ angular.module('eventer.events', [])
 
 	$scope.getFavs = function() {
 		Events.getFavorites($scope.username).then(function(data){
-			console.log(data);
-			$scope.favorites = data.data;
+			$scope.favorites = data.data.sort();
 		}).catch(function(error){
 	  	console.error(error);
 	  });
