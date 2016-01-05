@@ -41,8 +41,11 @@ app.post('/api/users/favorites', function(req, res){
   var username = 'nick'
   User.findOne({ 'username': username }).then(function(person){
   	if (person){
-  		person.favorites.push(favorite);
-  		person.save();
+  		if (person.favorites.indexOf(favorite) === -1){
+  		  person.favorites.push(favorite);	
+  		  person.save();
+  		}
+  		// person.favorites = ['basketball'];
   	}
   });
   
@@ -64,8 +67,12 @@ app.post('/api/users/locations', function(req, res){
   var username = 'nick'
   User.findOne({ 'username': username }).then(function(person){
   	if (person){
-  		person.locations.push(zip);
-  		person.save();
+  		if (person.locations.indexOf(zip) === -1){
+	  		person.locations.push(zip);
+	  		person.save();
+  		}
+  		// person.locations=[];
+	  	// person.save();
   	}
   });
   

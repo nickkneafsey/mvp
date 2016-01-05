@@ -11,10 +11,14 @@
     <div class='events' ng-controller="EventsController">
   
 
-      <form class="populate" ng-submit='populateEvents()'>
+      <form class="populate" ng-submit='populateEvents(); addZip()'>
         <input ng-model='zip' placeholder="Enter Zip Code">
         <center><button type="submit">Submit</button></center>
       </form>
+      <select ng-init='getZips()'>
+        <option>Previously used Zip Codes</option>
+        <option ng-repeat='zip in zips' ng-model='zip' value={{zip}}>{{zip}}</option>
+      </select>
 
       <form class="addFavorite" ng-submit='addToFavorites()'>
         <input ng-model='favorite' placeholder="Add Favorite">
@@ -25,8 +29,8 @@
         <input ng-model='filter' placeholder="Filter">
       </form>
       <select ng-init='getFavs()'>
-        <!-- <option value="volvo">Volvo</option> -->
-        <option ng-repeat='favorite in favorites' ng-model='favorite'>{{favorite}}</option>
+        <option>Filter By Favorite</option>
+        <option ng-repeat='favorite in favorites' ng-model='filter' value={{favorite}}>{{favorite}}</option>
       </select>
 
       <!-- create a dropdown with favorites -->
