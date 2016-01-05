@@ -12,7 +12,7 @@ angular.module('eventer.services',[])
 		return $http({
 			method: 'POST',
 			url: '/api/users/favorites',
-			data: favorite
+			data: {favorite: favorite}
 		});
 	}
 	return {

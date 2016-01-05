@@ -12,6 +12,7 @@ angular.module('eventer.events', [])
 	  });
 	};
 	$scope.addToFavorites = function() {
+		console.log("favorite", $scope.favorite);
 		Events.addFavorite($scope.favorite);
 	}
   

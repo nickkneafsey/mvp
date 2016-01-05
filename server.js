@@ -1,10 +1,13 @@
 var User = require('./db.js');
+var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var express = require('express');
 
 var app = express();
 
 var PORT = process.env.PORT || 3000;
+
+app.use(bodyParser.json());
 
 app.use('/', express.static('client'));
 
@@ -14,7 +17,7 @@ mongoose.connect('mongodb://localhost/eventer');
 
 app.post('/api/users', function(req, res){
   //find username
-
+  //console.log(req);
   var newUser = new User({
 	  username: 'jerry275',
 	  password: '123',
@@ -24,8 +27,7 @@ app.post('/api/users', function(req, res){
 });
 
 app.post('/api/users/favorites', function(req, res){
-  //find username
-  var favorite = "scuba diving";
+  var favorite = req.body.favorite;
   User.findOne({ 'username': 'nick' }).then(function(person){
   	if (person){
   		person.favorites.push(favorite);
