@@ -1,11 +1,12 @@
 .event {
   border-width: 3px;
-  border-color: black;
+  border-color: white;
   border-style: solid;
   color:white;
   background-color: black;
   font-size: 15pt;
   font-family: 'Helvetica', serif;
+  /*font-family: times, Times New Roman, times-roman, georgia, serif;*/
   height:200px;
 
 }
@@ -15,6 +16,14 @@ button {
 	height: 25px;
 	position:relative;
 	text-align: center;
+}
+
+.title{
+  font-size: 22pt;
+
+}
+.price {
+  text-align: right;
 }
 .title, .date, .city, .venue, .price{
 	background-color: black;
@@ -31,8 +40,10 @@ input {
 }
 
 h1 {
-  font-size: 36pt;
+  font-size: 55pt;
   font-family: 'Helvetica', serif;
+  /*font-family: times, Times New Roman, times-roman, georgia, serif;*/
+
   text-align: center;
   padding-bottom: 36px;
 }
@@ -43,4 +54,7 @@ select {
   overflow: hidden;
   background: url(new_arrow.png) no-repeat right #ddd;
   border: 1px solid #ccc;
+}
+option{
+  font-size: 32pt;
 }

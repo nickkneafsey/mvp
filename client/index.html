@@ -41,11 +41,11 @@
 
       <!-- create a dropdown with favorites -->
       <div class="event" ng-repeat='event in data.events| filter: filter' style="background-image: url({{event.performers[0].image}})">
-          <span class="title">{{event.title}}</span><br>
+          <span class="title">{{event.title}}</span>
+          <span class="price" ng-if='event.stats.lowest_price'>Prices from ${{event.stats.lowest_price}}</span><br>
           <span class="date">{{event.datetime_local | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a'}}</span><br>
-          <span class="city">{{event.venue.city}}</span><br>
           <span class="venue">{{event.venue.name}}</span><br>
-          <span class="price">{{event.stats.lowest_price}}</span><br>
+          <span class="city">{{event.venue.city}}</span><br>
       </div>
     </div>
     <!-- end to be commented out later -->
