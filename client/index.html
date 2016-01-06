@@ -15,17 +15,19 @@
         <option ng-repeat='zip in zips'  value={{zip}}>{{zip}}</option>
       </select>
       </center>
+      <center>
       <form class="populate" ng-submit='populateEvents(); addZip(); getZips()'>
         <input ng-model='zip' placeholder="Enter Zip Code">
         <center><button type="submit">Submit</button></center>
       </form>
+      </center>
       <br>
-
+      <center>
       <form class="addFavorite" ng-submit='addToFavorites(); getFavs()'>
         <input ng-model='favorite' placeholder="Add Favorite">
         <center><button type="submit">Submit</button></center>
       </form>
-
+      </center>
       <br>
       <center>
       <select ng-init='getFavs()' ng-model='filter'>
@@ -33,10 +35,11 @@
         <option ng-repeat='favorite in favorites'  value={{favorite}}>{{favorite}}</option>
       </select>
       </center>
-      
+      <center>
       <form class="filter">
         <input ng-model='filter' placeholder="Filter">
       </form>
+      </center>
       <br>
 
       <!-- create a dropdown with favorites -->
@@ -46,6 +49,7 @@
           <span class="date">{{event.datetime_local | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a'}}</span><br>
           <span class="venue">{{event.venue.name}}</span><br>
           <span class="city">{{event.venue.city}}</span><br>
+          <a class="buy" ng-if='event.url' href={{event.url}}>Buy Tickets</a>
       </div>
     </div>
     <!-- end to be commented out later -->

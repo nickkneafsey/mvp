@@ -12,7 +12,7 @@
 }
 
 button {
-	width: 95%;
+	width: 80%;
 	height: 25px;
 	position:relative;
 	text-align: center;
@@ -25,13 +25,16 @@ button {
 .price {
   text-align: right;
 }
-.title, .date, .city, .venue, .price{
+.buy {
+  color: white;
+}
+.title, .date, .city, .venue, .price, .buy{
 	background-color: black;
 	display:inline;
 }
 
 input {
-  width: 100%;
+  width: 80%;
   text-align: center;
   line-height: 55px;
   font-family: 'Helvetica', serif;
@@ -49,7 +52,7 @@ h1 {
 }
 
 select {
-  width: 95%;
+  width: 80%;
   height: 34px;
   overflow: hidden;
   background: url(new_arrow.png) no-repeat right #ddd;
